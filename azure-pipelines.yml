@@ -3,13 +3,16 @@ trigger:
 - releases/*
 
 parameters:
-  - name: Hello
-    type: string
-    default: "NoText"
+  - name: Teste
+    type: boolean
+    default: true
 
 jobs:
 - job: Windows
   pool:
     vmImage: 'windows-latest'
+- job: 
   steps:
-    - script: echo ${{parameters.Hello}}
+    - bash: |
+        echo ${{parameters.Teste}}
+      condition: eq(parameters.Teste, true)
