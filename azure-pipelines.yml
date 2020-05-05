@@ -17,5 +17,5 @@ jobs:
 - job: 
   steps:
     - bash: |
-        echo ${{parameters.Teste}}
-      condition: eq(parameters.Teste, true)
+        echo ${{true}}
+      condition: eq(true, true)
